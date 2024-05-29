@@ -1,5 +1,6 @@
-🌟 Buscador de Pokémon 🌟
-Bienvenidos a Pokémon. Este proyecto utiliza la potente PokeAPI para obtener información detallada sobre cada Pokémon. Es una aplicación web interactiva que permite buscar y ver detalles de tus Pokémon favoritos y la cracion de pokemones personalizados.
+🌟 Bienvenidos Pokémones 🌟
+
+Este proyecto utiliza la potente PokeAPI para obtener información detallada sobre cada Pokémon. Es una aplicación web interactiva que permite buscar y ver detalles de tus Pokémon favoritos y la cracion de pokemones personalizados.
 
 🛠️ Tecnologías Utilizadas
 Este proyecto está construido utilizando una variedad de tecnologías web modernas:
