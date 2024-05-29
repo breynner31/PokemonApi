@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles del Pokémon</title>
+    <link rel="stylesheet" href="css/style2.css"> <!-- Asegúrate de enlazar tu archivo CSS -->
+</head>
+<body>
+    <div id="pokemonDetalle"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const params = new URLSearchParams(window.location.search);
+            const pokemonId = params.get('id');
+
+            if (pokemonId) {
+                fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`)
+                    .then(response => response.json())
+                    .then(data => mostrarDetalles(data));
+            }
+
+            function mostrarDetalles(pokemon) {
+                const div = document.getElementById('pokemonDetalle');
+                let tipos = pokemon.types.map(type => ` <p class="${type.type.name} tipo">${type.type.name}</p>`);
+                tipos = tipos.join('');
+
+                div.innerHTML = `
+              
+       
+      
+                
+                    <h1>${pokemon.name} ( ${pokemon.id} )</h1>
+                    <img src="${pokemon.sprites.other["official-artwork"].front_shiny}" alt="${pokemon.name}">
+                    <div class="pokemon-tipos">
+                        ${tipos}
+                    </div>
+                    <p>Altura: ${pokemon.height}</p>
+                    <p>Peso: ${pokemon.weight}</p>
+    
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
